@@ -1,8 +1,8 @@
 # Corvus OS
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/corvus_santoni.mk
+    $(LOCAL_DIR)/bliss_santoni.mk
 
 COMMON_LUNCH_CHOICES := \
-    corvus_santoni-userdebug \
-    corvus_santoni-user \
-    corvus_santoni-eng
+    bliss_santoni-userdebug \
+    bliss_santoni-user \
+    bliss_santoni-eng
