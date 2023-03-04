@@ -1,8 +1,8 @@
 # Corvus OS
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_santoni.mk
+    $(LOCAL_DIR)/banana_santoni.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_santoni-userdebug \
-    aosp_santoni-user \
-    aosp_santoni-eng
+    banana_santoni-userdebug \
+    banana_santoni-user \
+    banana_santoni-eng
