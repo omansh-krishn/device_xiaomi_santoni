@@ -54,8 +54,8 @@ TARGET_KERNEL_CONFIG := santoni_treble_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 TARGET_KERNEL_VERSION := 4.9
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CLANG_VERSION := proton
-TARGET_KERNEL_CLANG_PATH := $(PWD)/prebuilts/clang/host/linux-x86/clang-proton
+TARGET_KERNEL_CLANG_VERSION := r450784d
+TARGET_KERNEL_CLANG_PATH := $(PWD)/prebuilts/clang/host/linux-x86/clang-r450784d
 TARGET_KERNEL_LLVM_BINUTILS := false
 
 # ANT
