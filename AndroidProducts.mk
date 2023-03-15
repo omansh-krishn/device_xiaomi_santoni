@@ -1,8 +1,8 @@
 # evolution
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_santoni.mk
+    $(LOCAL_DIR)/derp_santoni.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_santoni-userdebug \
-    aosp_santoni-user \
-    aosp_santoni-eng
+    derp_santoni-userdebug \
+    derp_santoni-user \
+    derp_santoni-eng
