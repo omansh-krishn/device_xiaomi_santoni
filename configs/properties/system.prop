@@ -1,0 +1,5 @@
+# Havoc Specific props
+ro.havoc.group.url=https://t.me/omansh_krishn
+ro.havoc.maintainer=Omansh Krishn
+ro.havoc.maintainer.username=omansh_krishn
+ro.havoc.device.name=Redmi 4X
