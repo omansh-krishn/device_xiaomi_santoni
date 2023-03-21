@@ -46,8 +46,10 @@ ifeq ($(TARGET_KERNEL_VERSION), 4.9)
     BOARD_KERNEL_CMDLINE := androidboot.usbconfigfs=true
 endif
 #BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-TARGET_PREBUILT_KERNEL= kernel/xiaomi/msm8937/Mi8937/Image.lz4-dtb
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_PREBUILT_KERNEL= $(PWD)/kernel/xiaomi/msm8937/Mi8937
+PRODUCT_COPY_FILES += \ 	
+$(TARGET_PREBUILT_KERNEL):kernel
+BOARD_KERNEL_IMAGE_NAME := $(TARGET_PREBUILT_KERNEL)/Image.gz-dtb
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_COMPILE_WITH_MSM_KERNEL := true
