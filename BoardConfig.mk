@@ -48,7 +48,6 @@ endif
 #BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 TARGET_PREBUILT_KERNEL= $(PWD)/kernel/xiaomi/msm8937/Mi8937
 PRODUCT_COPY_FILES += \
-
 	$(TARGET_PREBUILT_KERNEL):kernel
 
 BOARD_KERNEL_IMAGE_NAME := $(TARGET_PREBUILT_KERNEL)/Image.gz-dtb
