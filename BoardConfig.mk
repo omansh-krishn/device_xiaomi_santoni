@@ -41,30 +41,20 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78B0000 loop.max_part=7
-ifeq ($(TARGET_KERNEL_VERSION), 4.9)
-    BOARD_KERNEL_CMDLINE := androidboot.usbconfigfs=true
-endif
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78B0000 loop.max_part=7 androidboot.usbconfigfs=true
 #BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-TARGET_PREBUILT_KERNEL= $(PWD)/kernel/xiaomi/msm8937/Mi8937
-PRODUCT_COPY_FILES += \
-	$(TARGET_PREBUILT_KERNEL):kernel
 
-BOARD_KERNEL_IMAGE_NAME := $(TARGET_PREBUILT_KERNEL)/Image.gz-dtb
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE :=  2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 #TARGET_KERNEL_CONFIG := santoni_treble_defconfig
-TARGET_KERNEL_CONFIG := msm8937_defconfig
+TARGET_KERNEL_CONFIG := mi8937_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8937
 TARGET_KERNEL_VERSION := 4.9
-#TARGET_KERNEL_CLANG_COMPILE := true
-#TARGET_KERNEL_CLANG_VERSION := r468909b
-#TARGET_KERNEL_CLANG_VERSION := r450784d
-#TARGET_KERNEL_CLANG_PATH := $(PWD)/prebuilts/clang/host/linux-x86/clang-r450784d
-#TARGET_KERNEL_ADDITIONAL_FLAGS := \
-#HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
-#TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_ADDITIONAL_FLAGS := LLVM=1 \
+    HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument"
 #TARGET_KERNEL_LLVM_BINUTILS := false
 # ANT
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
